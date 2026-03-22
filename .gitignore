@@ -1,0 +1,17 @@
+# 编译产物
+*.exe
+*.o
+*.out
+*.a
+*.dll
+*.so
+
+# IDE/编辑器临时文件
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 日志文件
+*.log
