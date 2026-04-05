@@ -73,14 +73,14 @@ Status Pop(SqStack* S,ElemType* e)
 Status GetTop(SqStack S,ElemType* e)
 {
     if(StackEmpty(S)) return ERROR;
-    *e=*--S.top;
+    *e=*(S.top-1);
     return OK;
 }
 
-void StackTraverse(SqStack S)
+void StackTraverse(const SqStack *S)
 {
-    ElemType* p=S.base;
-    while(p!=S.top)
+    ElemType* p=S->base;
+    while(p!=S->top)
     {
         printf("%d ",*p);
         p++;
@@ -99,7 +99,7 @@ int main()
     Push(&S,2);
     Push(&S,3);
 
-    StackTraverse(S);
+    StackTraverse(&S);
 
     Pop(&S,&e);
 
